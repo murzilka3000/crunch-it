@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <main>
+        <section class="home">
+            <div class="wrapper">
+                <div class="home-container">
+                    <div class="home-container-block">
+                        <h1><span>Welcome to</span><br>Crunch it</h1>
+                        <h6>The closest to 00:00 wins the game!</h6>
+                        <button id="startButton">GOT IT! LET’S START</button>
+                    </div>
+                    <img class="img-1" src="/img/img-1.svg" alt="">
+                    <img class="img-2" src="/img/img-2.svg" alt="">
+                    <img class="img-3" src="/img/img-3.svg" alt="">
+                    <img class="img-4" src="/img/img-4.svg" alt="">
+                    <img class="img-5" src="/img/img-5.svg" alt="">
+                    <img class="img-6" src="/img/img-6.svg" alt="">
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        // Получаем элементы
+        const startButton = document.getElementById("startButton");
+        const homeContainerBlock = document.querySelector(".home-container-block");
+        const images = document.querySelectorAll(".home-container img");
+
+        // Добавляем обработчик события для кнопки
+        startButton.addEventListener("click", () => {
+            // Убираем блок вниз
+            homeContainerBlock.classList.add("hidden");
+
+            // Разлетающиеся картинки
+            images.forEach((img) => {
+                img.classList.add("fly");
+            });
+        });
+    </script>
+</body>
+</html>

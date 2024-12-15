@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <div class="wrapper">
+            <div class="header">
+                <div class="header-container">
+                    <img src="/img/arrow.svg" alt="">
+                    <p>Rooms</p>
+                </div>
+                <p>@kofiko260</p>
+                <div class="header-container-two">
+                    <img src="/img/top.svg" alt="">
+                </div>
+            </div>
+        </div>   
+    </header>
+    <main>
+        <section class="hero-bomb">
+            <div class="wrapper">
+                <div class="hero-bomb-container">
+                    <div class="hero-bomb-one">
+                        <h4>Round Price</h4>
+                        <div class="hero-bomb-container-block">
+                            <img src="/img/usdt.svg" alt="">
+                            <p>5</p>
+                        </div>
+                    </div>
+                    <div class="hero-bomb-two">
+                        <h4>Players joined</h4>
+                        <div class="hero-bomb-container-block">
+                            <img src="/img/circle.svg" alt="">
+                            <p>1</p>
+                        </div>
+                    </div>
+                    <div class="hero-bomb-one">
+                        <h4>Round Price</h4>
+                        <div class="hero-bomb-container-block">
+                            <img src="/img/usdt.svg" alt="">
+                            <p>5</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="bomb-text">
+            <h6 id="statusText">Getting Ready</h6>
+            <h1 id="mainText">Waiting For Players To Join</h1>
+        </div>
+        <div class="bomb-timer">
+            <div class="wrapper">
+                <div class="bomb-container">
+                    <img src="/img/bomb.svg" alt="">
+                    <p>00:10</p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="wrapper">
+                <div class="bomb-container">
+                    <button class="start-button" id="startButton">
+                        JOIN THE ROUND
+                    </button>
+                    <button class="stop-button" id="stopButton" style="display: none;">
+                        STOP
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="wrapper">
+            <div class="footer-container">
+                <div>
+                    <img src="/img/Loader.svg" alt="">
+                    <p>PLAY</p>
+                </div>
+                <div>
+                    <img src="/img/podium.svg" alt="">
+                    <p>LEADERBOARD</p>
+                </div>
+                <div>
+                    <img src="/img/user.svg" alt="">
+                    <p>PROFILE</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const startButton = document.getElementById("startButton");
+        const stopButton = document.getElementById("stopButton");
+
+        const statusText = document.getElementById("statusText");
+        const mainText = document.getElementById("mainText");
+
+        startButton.addEventListener("click", () => {
+            startButton.style.display = "none"; 
+            stopButton.style.display = "flex"; 
+
+            statusText.textContent = "Hit When Ready"; 
+            mainText.innerHTML = "Stop the clock as close to <br> 00:00 as you can!";
+        });
+        stopButton.addEventListener("click", () => {
+            stopButton.style.display = "none"; 
+            startButton.style.display = "flex";
+
+            statusText.textContent = "Getting Ready";
+            mainText.textContent = "Waiting For Players To Join";
+        });
+    </script>
+</body>
+</html>
